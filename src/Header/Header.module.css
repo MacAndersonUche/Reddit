@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+}
+.topNav {
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;   
+  display: flex; 
+  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  height: 4rem;
+  border-bottom: 0.1px solid black;
+
+}
+
+.topNav img, 
+.topNav h1, 
+.topNav input{
+  color: #181616;
+  text-align: center;
+  padding: 0 2rem;
+  text-decoration: none;
+  font-size: 20px;  
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ 
+}
+
+.topNav input {
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+  
+}
