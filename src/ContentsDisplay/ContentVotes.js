@@ -4,7 +4,7 @@ const ContentVotes = (props) => {
 
 
     return (
-        <p>{props.vote}</p>
+        <p>{props.votes}</p>
     )
 };
 

@@ -10,11 +10,13 @@ body {
     display: grid;
     background-color: rgb(255, 255, 255);
    border-radius: 1rem;
+   display: grid;
+   grid-template-columns: 20px 1fr;
 }
 
 .image {
-    height: 10rem;
-    width: 10rem;
+    height: 15rem;
+    width: 15rem;
 }
 
 .mainContentBottomContainer {
@@ -31,3 +33,4 @@ body {
   text-align: center;
 
 }
+

@@ -11,6 +11,7 @@ const ContentAllDetails = (props) => {
 
     return (
         <div className="mainDiv">
+            <ContentVotes votes={props.votes} />
             <div>
                 <div className="mainContentTopContainer">
                     <ContentTitle title={props.title} />
@@ -26,7 +27,7 @@ const ContentAllDetails = (props) => {
             </div>
 
 
-            <ContentVotes votes={props.votes} />
+
 
         </div>
     )
