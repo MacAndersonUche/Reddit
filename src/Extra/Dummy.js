@@ -12,7 +12,7 @@ export const fetchFunc = async () => {
 export const endPoint = 'https://www.reddit.com/r/popular.json';
 
 
-const DUMMY_OBJArry = [
+export const DUMMY_OBJArry = [
     {
         id: 1,
         title: 'Return of the Mac',

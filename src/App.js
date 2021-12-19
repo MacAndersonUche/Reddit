@@ -1,52 +1,53 @@
 import { useEffect, useState } from "react";
 import ContentContainer from "./ContentsDisplay/ContentContainer";
-import { endPoint } from "./Extra/Dummy";
+import { endPoint, DUMMY_OBJArry } from "./Extra/Dummy";
 import Header from './Header/Header'
+
 
 
 function App() {
 
-  const [display, setDisplay] = useState({});
+  const [display, setDisplay] = useState(DUMMY_OBJArry);
 
-  useEffect(() => {
-    const fetchApp = async (url) => {
+  // useEffect(() => {
+  //   const fetchApp = async (url) => {
 
-      try {
-        const response = await fetch(url);
+  //     try {
+  //       const response = await fetch(url);
 
-        if (response.ok) {
-          const responseObj = await response.json();
+  //       if (response.ok) {
+  //         const responseObj = await response.json();
 
-          const data1 = responseObj.data.children
+  //         const data1 = responseObj.data.children
 
-          // console.log(responseObj.data)
+  //         // console.log(responseObj.data)
 
-          // console.log(typeof (data1))
+  //         // console.log(typeof (data1))
 
-          setDisplay(data1);
+  //         setDisplay(data1);
 
 
-          return data1
+  //         return data1
 
-        } else {
-          throw new Error(response.status)
-        }
+  //       } else {
+  //         throw new Error(response.status)
+  //       }
 
-      } catch (e) {
-        console.log(e)
-      }
-    };
-    fetchApp(endPoint)
-  }, [])
+  //     } catch (e) {
+  //       console.log(e)
+  //     }
+  //   };
+  //   fetchApp(endPoint)
+  // }, [])
 
 
 
   return (
     <div>
       <Header />
-      <ul>{
+      {/* <ul>{
         Object.keys(display).map(dog => (<li key={dog}>{dog}</li>))
-      }</ul>
+      }</ul> */}
 
       <div>
         <ContentContainer item={display} />
