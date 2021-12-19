@@ -1,10 +1,10 @@
 import ContentAllDetails from "./ContentAllDetails"
-
+import '../Css/ContentsCss.css'
 
 const ContentContainer = (props) => {
 
     return (
-        <ul>
+        <ul >
             {props.item.map(obj => (
                 <ContentAllDetails
                     key={obj.id}

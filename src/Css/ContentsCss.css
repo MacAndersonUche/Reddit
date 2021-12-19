@@ -1,0 +1,33 @@
+body {
+    background-color: rgb(237, 241, 241);
+}
+
+
+.mainDiv {
+    height: 40%;
+    width: 50vw;
+    margin: 2rem auto;
+    display: grid;
+    background-color: rgb(255, 255, 255);
+   border-radius: 1rem;
+}
+
+.image {
+    height: 10rem;
+    width: 10rem;
+}
+
+.mainContentBottomContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-top: 1px solid black;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mainContentTopContainer{
+ margin-bottom: 0;
+  text-align: center;
+
+}

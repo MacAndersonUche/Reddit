@@ -10,13 +10,24 @@ const ContentAllDetails = (props) => {
 
 
     return (
-        <div>
-            <ContentTitle title={props.title} />
-            <ContentAuthor author={props.author} />
-            <ContentComments comments={props.comments} />
-            <ContentMedia media={props.media} />
+        <div className="mainDiv">
+            <div>
+                <div className="mainContentTopContainer">
+                    <ContentTitle title={props.title} />
+                    <ContentMedia media={props.media} />
+                </div>
+                <div className="mainContentBottomContainer">
+
+                    <ContentAuthor author={props.author} />
+                    <ContentTime time={props.time} />
+                    <ContentComments comments={props.comments} />
+                </div>
+
+            </div>
+
+
             <ContentVotes votes={props.votes} />
-            <ContentTime time={props.time} />
+
         </div>
     )
 };

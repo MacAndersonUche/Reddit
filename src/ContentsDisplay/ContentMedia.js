@@ -3,7 +3,7 @@
 const ContentMedia = (props) => {
 
     return (
-        <img src={props.media} />
+        <img src={props.media} className="image" />
     )
 };
 
