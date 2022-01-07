@@ -46,6 +46,4 @@ export const DUMMY_OBJArry = [
 ]
 
 
-export const objArr = ['Name', 'Title', 'Votes', 'Time']
-
 

@@ -1,7 +1,21 @@
 import { useEffect, useState } from "react";
+import styled from "styled-components";
 import ContentContainer from "./ContentsDisplay/ContentContainer";
-import { endPoint, DUMMY_OBJArry } from "./Extra/Dummy";
+import { endPoint } from "./Extra/Dummy";
 import Header from './Header/Header'
+import SubMainDiv from "./SubReddit/SubMainDiv";
+
+
+const Content = styled.div`
+margin-top: 5rem;
+
+`
+
+const Main = styled.div`
+display: flex;
+justify-content: space-evenly;
+align-content: center;
+`
 
 
 
@@ -9,86 +23,86 @@ import Header from './Header/Header'
 function App() {
 
   const [display, setDisplay] = useState('');
-
-  useEffect(() => {
-    const fetchApp = async (url) => {
-
-      try {
-        const response = await fetch(url);
-
-        if (response.ok) {
-          const responseObj = await response.json();
-
-          const data1 = responseObj.data.children[0].data;
-
-          // console.log(responseObj.data.children)
-
-          // console.log(typeof (data1))
-
-          console.log(data1)
-
-          setDisplay(data1);
+  const [clicked, setClicked] = useState(false);
+  const [subred, setSubRed] = useState('')
 
 
-          return data1
+  var myUrl;
 
-        } else {
-          throw new Error(response.status)
-        }
+  const fetchApp = async (url) => {
 
-      } catch (e) {
-        console.log(e)
+    try {
+      const response = await fetch(url);
+
+      if (response.ok) {
+        const responseObj = await response.json();
+
+
+        const data = responseObj.data.children;
+
+        console.log(data)
+
+        setDisplay(data);
+
+
+      } else {
+        throw new Error('Error')
       }
-    };
-    fetchApp(endPoint)
-  }, [])
+
+    } catch (e) {
+      console.log(e)
+    }
+  };
+
+  if (clicked) {
+    console.log('Run Now')
+    myUrl = subred;
+  }
+  else {
+    myUrl = endPoint;
+  }
+  useEffect(() => {
+
+    fetchApp(myUrl)
 
 
+  }, [myUrl])
 
 
   return (
     <div>
-      <Header />
-      <ul>{
+      <Header setDisplay={setDisplay} />
 
-      }</ul>
+      <Main>
 
-      {/* 
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(x => (<ContentContainer
-        author={display[x].data.author}
-        title={display[x].data.title}
-        id={display[x].data.id}
-        comments={display[x].data.num_comments}
-        time={display[x].data.created}
-        votes={display[x].data.ups + display[x].data.downs}
+        <div>
+          {Object.keys(display).map(index => (
 
-      />))} */}
-      {/* {<ContentContainer
-        author={display[0].data.author}
-        title={display[0].data.title}
-        id={display[0].data.id}
-        comments={display[0].data.num_comments}
-        time={display[0].data.created}
-        votes={display[0].data.ups + display[0].data.downs}
+            <ContentContainer
+              key={display[index].data.title}
+              author={display[index].data.author}
+              title={display[index].data.title}
+              id={display[index].data.id}
+              comments={display[index].data.num_comments}
+              time={display[index].data.created}
+              votes={display[index].data.ups + display[index].data.downs}
+              url={display[index].data.url}
+            />))}
+        </div>
 
-      />} */}
+        <Content>
 
-      {<ContentContainer
-        author={display.author}
-        title={display.title}
-        id={display.id}
-        comments={display.num_comments}
-        time={display.created}
-        votes={display.ups + display.downs}
+          <SubMainDiv setClicked={setClicked} setSubRed={setSubRed} />
+        </Content>
 
-      />}
+
+      </Main>
 
 
 
 
 
 
-      {/* <ContentContainer item={display} /> */}
 
 
     </div>

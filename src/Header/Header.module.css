@@ -11,7 +11,9 @@ body {
   padding: 0;
   height: 4rem;
   border-bottom: 0.1px solid black;
-
+   position: fixed; /* Set the navbar to fixed position */
+  top: 0; 
+  width: 100%;
 }
 
 .topNav img, 
@@ -24,11 +26,35 @@ body {
   font-size: 20px;  
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
  
+
+
 }
 
+
 .topNav input {
-    width: 10rem;
-    height: 2.5rem;
-    border-radius: 0.5rem;
+  width: 10rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
   
+}
+
+
+@media only screen and (max-width: 768px) {
+  .topNav img, 
+.topNav h1, 
+.topNav input{
+
+font-size: 12px;  
+
+}  
+
+.topNav input {
+  width: 5rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  
+}
+
+    
+     
 }
